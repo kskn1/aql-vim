@@ -10,7 +10,6 @@ syn cluster aqlALL          contains=TOP
 " Various error conditions.
 syn match   aqlError        ")"                 " Lonely closing paren.
 syn match   aqlError        ",\(\_\s*[;)]\)\@=" " Comma before a paren or semicolon.
-syn match   aqlError        " $"                " Space at the end of a line.
 
 " Special words.
 syn keyword aqlSpecial      false null true
