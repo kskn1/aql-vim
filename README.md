@@ -1,5 +1,7 @@
 # aql-vim
-A simple syntax highlighting for AQL (ArangoDB Query Language).
+A simple vim syntax highlighting config for AQL (ArangoDB Query Language).
+
+I could point you to the emacs one, but if you're here why would you want or need to go there?
 
 ### Installation
 Place aql.vim into your vim folder, usually: `~/.vim/syntax/`
@@ -9,4 +11,3 @@ Then to make it recognize on start, edit in either your `~/.vimrc` or create a f
 ```
 au BufRead,BufNewFile *.aql set filetype=aql
 ```
-I
