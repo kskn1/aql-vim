@@ -96,17 +96,6 @@ syn region  aqlParens       transparent matchgroup=aqlParen start="(" end=")"
 syn match   aqlParenEmpty   "()"
 syn region  aqlParens       transparent matchgroup=aqlParenFunc start="\(\<\w\+\>\)\@<=(" end=")"
 
-" Highlight types correctly inside create table and procedure statements.
-" All other SQL is properly highlighted as well.
-" syn region  sqlTypeParens   contained matchgroup=sqlType start="(" end=")" contains=@sqlALL
-" syn match   sqlTypeMatch    contained "\(\(^\|[,(]\)\s*\S\+\s\+\)\@<=\w\+\(\s*([^)]\+)\)\?" contains=sqlType,sqlTypeParens
-" syn match   sqlTypeMatch    contained "\(\(^\|[,(]\)\s*\S\+\s\+\)\@<=character\s\+varying\s*([^)]\+)" contains=sqlType,sqlTypeParens
-" syn region  sqlTypeRegion   matchgroup=sqlParen start="\(create\s\+table\s\+[^(]\+\s\+\)\@<=(" end=")" contains=@sqlALL,sqlTypeMatch
-" syn region  sqlTypeRegion   matchgroup=sqlParen start="\(create\s\+\(or\s\+replace\s\+\)\?procedure\s\+[^(]\+\s*\)\@<=(" end=")" contains=@sqlALL,sqlTypeMatch
-
-" SQL Embedded in a statement.
-" syn region  sqlquoteRegion  matchgroup=sqlParen start="\(execute\s\+immediate\s*\)\@<=('" end="')" contains=@sqlALL
-
 " Stolen from sh.vim.
 if !exists("sh_minlines")
   let sh_minlines = 200
@@ -117,8 +106,6 @@ endif
 exec "syn sync minlines=" . sh_minlines . " maxlines=" . sh_maxlines
 
 " Define the default highlighting.
-" For version 5.7 and earlier: only when not done already
-" For version 5.8 and later: only when an item doesn't have highlighting yet
 if version >= 508 || !exists("did_aql_syn_inits")
     if version < 508
         let did_aql_syn_inits = 1
